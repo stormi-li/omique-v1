@@ -32,7 +32,7 @@ func (producer *Producer) monitorLoad() {
 		if data["load"] != "" {
 			producer.load, _ = strconv.ParseFloat(data["load"], 64)
 		}
-		time.Sleep(1 * time.Second)
+		time.Sleep(retry_wait_time * 2)
 	}
 }
 
