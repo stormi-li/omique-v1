@@ -57,6 +57,10 @@ func (producer *Producer) reConnect() error {
 	return err
 }
 
+func (producer *Producer) OpenLoadMonitor() {
+	go producer.monitorLoad()
+}
+
 func (producer *Producer) Publish(message []byte) error {
 	var err error
 	retryCount := 0

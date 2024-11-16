@@ -25,6 +25,5 @@ func (c *Client) NewProducer(channel string) *Producer {
 		channel:        channel,
 		rlock:          sync.RWMutex{},
 	}
-	go producer.monitorLoad()
 	return &producer
 }
